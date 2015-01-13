@@ -1,7 +1,10 @@
 <?php
 
+// it will hide the Error Notices and it will let us NOT to manually configure our PHP.ini
 error_reporting(E_ALL & ~E_NOTICE);
-//it will hide the Error Notices and it will let us NOT to manually configure our PHP.ini
+
+// it will set the timezone to Manila and it will let us NOT to manually configure our PHP.ini
+date_default_timezone_set("Asia/Manila");
 
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/framework/yii.php';

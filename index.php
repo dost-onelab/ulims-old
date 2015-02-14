@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE);
+//it will hide the Error Notices and it will let us NOT to manually configure our PHP.ini
+
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';

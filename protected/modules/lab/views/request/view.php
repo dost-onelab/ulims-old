@@ -751,7 +751,7 @@ function addPackage()
 
 function generateSampleCode()
 {
-	<?php 
+	<?php
 	echo CHtml::ajax(array(
 			'url'=>$this->createUrl('sample/generateSampleCode',array('id'=>$model->id)),
 			//'data'=> "js:$(this).serialize()+ '&id='+id",
@@ -783,12 +783,12 @@ function generateSampleCode()
 				 	$('#dialogSampleCode').html(status+'('+error+')'+': '+ request.responseText+ ' {'+error.code+'}' );
 					}",
             ))?>;
-    return false; 
+    return false;
 }
 
 function confirmGenerateSampleCode()
 {
-	<?php 
+	<?php
 			echo CHtml::ajax(array(
 					'url'=>$this->createUrl('sample/confirm',array('id'=>$model->id)),
 		            'type'=>'post',

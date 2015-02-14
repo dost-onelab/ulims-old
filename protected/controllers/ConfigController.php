@@ -181,8 +181,29 @@ class ConfigController extends Controller
 			));
 	}
 	
+	public function actionSaveAPISettings()
+	{
+		$apisettings=dirname(__FILE__).'/../config/api-settings.ini';
+		$apisettings_array = parse_ini_file($apisettings, true);
+		$apisettingsarr=array();
+		
+		$apisettingsarr['API']=array(
+								'url'=>$_POST['API']['url'],
+								'version'=>$_POST['API']['version'],
+								'proxy_url'=>$_POST['API']['proxy_url'],
+								'proxy_port'=>$_POST['API']['proxy_port'],
+								'proxy_user'=>$_POST['API']['proxy_user'],
+								'proxy_pass'=>$_POST['API']['proxy_pass']);
+		
+		if($this->write_ini_file($apisettingsarr, $apisettings, TRUE)){
+			$this->redirect('admin');
+		}
+	}
+	
 	public function actionSaveSettings()
 	{		
+		
+		
 		$settings=dirname(__FILE__).'/../config/site-settings.ini';
 		$settings_array = parse_ini_file($settings, true);
 		$settingsarr=array();

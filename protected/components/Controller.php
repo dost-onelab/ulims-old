@@ -116,6 +116,10 @@ class Controller extends RController
 			case 'accounting':
 				$appTitle='Accounting Information Management System';
 			break;
+			
+			case 'ref':
+				$appTitle='Referral System';
+			break;
 									
 			default:
 				$appTitle='';
@@ -268,5 +272,23 @@ class Controller extends RController
 			return '0'.$count;
 		elseif ($count >= 1000)
 			return $count;			
+	}
+	
+	function getServer()
+	{
+		//return 'http://localhost/onelab/api/web/v1';
+		
+		return Yii::app()->params['API']['url'].Yii::app()->params['API']['version'];
+		
+		//return 'http://192.168.1.15:82/onelab/api/web/v1';
+		
+		// DOST IX API
+		//return 'http://119.93.23.123:82/onelab/api/web/v1';
+		
+		// ONELAB API
+		//return 'http://202.90.154.201/onelab/api/web/v1';
+		
+		//
+		//return 'http://dost-onelab.com/onelab/api/web/v1';
 	}
 }
